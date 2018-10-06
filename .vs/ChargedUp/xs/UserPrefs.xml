@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{B642CEC1-2DCF-A4A6-0774-D07DA4899653}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cube.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Spell.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/Cube.cs" Line="27" Column="1" />
+      <File FileName="../ba2Playground-master/Unity/Udemy/Block Breaker/Assets/Scripts/Ball.cs" Line="38" Column="6" NotebookId="1" />
+      <File FileName="../ba2Playground-master/Unity/Udemy/Block Breaker/Assets/Scripts/Paddle.cs" Line="23" Column="3" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
