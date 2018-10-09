@@ -1,20 +1,17 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spell : MonoBehaviour {
 
-    [SerializeField] Cube cube;
-    [SerializeField] float launchX = 2f;
-    [SerializeField] float launchY = 20f;
-
-    Vector3 cubeToBallVector;
-    bool hasStarted = false;
+    private Hand hand;
+    private bool hasStarted = false;
+    private Vector3 paddleToBallVector;
 
     // Use this for initialization
     void Start()
     {
-        cubeToBallVector = transform.position - cube.transform.position;
+        hand = GameObject.FindObjectOfType<Hand>();
+        paddleToBallVector = this.transform.position - hand.transform.position;
     }
 
     // Update is called once per frame
@@ -22,23 +19,16 @@ public class Spell : MonoBehaviour {
     {
         if (!hasStarted)
         {
-            LockSpellToPlayer();
-            LaunchSpellOnMouseClick();
-        }
-    }
+            // Lock the spell to the hand.
+            this.transform.position = hand.transform.position + paddleToBallVector;
 
-    private void LockSpellToPlayer()
-    {
-        Vector3 cubePos = new Vector3(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z);
-        transform.position = cubePos + cubeToBallVector;
-    }
-
-    private void LaunchSpellOnMouseClick()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(launchX, launchY);
+            // Wait for a mouse press to launch.
+            if (Input.GetMouseButtonDown(0))
+            {
+                print("Mouse clicked, launch ball");
+                hasStarted = true;
+                this.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 10f);
+            }
         }
     }
 }

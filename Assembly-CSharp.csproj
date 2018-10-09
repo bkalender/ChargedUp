@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cube.cs" />
+    <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\Spell.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/ba2/Desktop/ChargedUp/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
