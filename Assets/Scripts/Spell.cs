@@ -18,6 +18,7 @@ public class Spell : MonoBehaviour {
     void Update()
     {
         // Lock the spell to the hand
+        if(!hasStarted)
         LockSpellToHand();
 
         // Launch the spell upon mouse click

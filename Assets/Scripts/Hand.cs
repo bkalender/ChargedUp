@@ -6,6 +6,7 @@ public class Hand : MonoBehaviour {
     [SerializeField] public float minX, maxX, minY, maxY;
 
     private Spell spell;
+    private float zAxis = 8f;
 
     void Start()
     {
@@ -15,19 +16,24 @@ public class Hand : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-            AimWithMouse();  
+        AimWithMouse();
+        ShootSpell();
     }
 
 
     void AimWithMouse()
     {
-        float mousePosInUnitsX = Input.mousePosition.x / Screen.width * 20;
-        float mousePosInUnitsY = Input.mousePosition.y / Screen.height * 11;
+        Vector3 handPos = Input.mousePosition;
+        handPos.z = zAxis; // Set this to be the distance you want the object to be placed in front of the camera.
+        this.transform.position = Camera.main.ScreenToWorldPoint(handPos);
 
-        Vector2 handPos = new Vector2(this.transform.position.x, this.transform.position.y);
-
-        handPos.x = Mathf.Clamp(mousePosInUnitsX, minX, maxX);
-        handPos.y = Mathf.Clamp(mousePosInUnitsY, minY, maxY);
-        this.transform.position = handPos;
+    }
+    void ShootSpell()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            spell.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 10f);
+            spell = GameObject.FindObjectOfType<Spell>();
+        }
     }
 }
