@@ -17,7 +17,7 @@ public class Cube : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        HandleHits();    
+        HandleHits();
     }
 
     void HandleHits()
