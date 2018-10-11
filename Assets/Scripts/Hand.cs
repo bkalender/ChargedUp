@@ -5,6 +5,8 @@ public class Hand : MonoBehaviour {
 
     [SerializeField] public float minX, maxX, minY, maxY;
 
+    public GameObject spellPrefab;
+    private GameObject newSpell;
     private Spell spell;
     private float zAxis = 8f;
 
@@ -17,6 +19,7 @@ public class Hand : MonoBehaviour {
     void Update()
     {
         AimWithMouse();
+        spell.gameObject.transform.position = gameObject.transform.position;
         ShootSpell();
     }
 
@@ -33,7 +36,8 @@ public class Hand : MonoBehaviour {
         if(Input.GetMouseButtonDown(0))
         {
             spell.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 10f);
-            spell = GameObject.FindObjectOfType<Spell>();
+            newSpell = Instantiate(spellPrefab);
+            spell = newSpell.GetComponent<Spell>();
         }
     }
 }

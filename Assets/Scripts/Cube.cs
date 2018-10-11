@@ -17,12 +17,9 @@ public class Cube : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        HandleHits();
-        print("omg it hit me");
-    }
+        if (col.gameObject.tag == "Spell")
+            Destroy(gameObject);
 
-    void HandleHits()
-    {
-        Destroy(gameObject);
+        print("omg it hit me");
     }
 }
