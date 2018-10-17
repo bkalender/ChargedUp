@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{B642CEC1-2DCF-A4A6-0774-D07DA4899653}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Spell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CubeParticle.cs">
     <Files>
-      <File FileName="Assets/Scripts/Spell.cs" Line="20" Column="38" />
-      <File FileName="Assets/Scripts/Cube.cs" Line="14" Column="6" />
-      <File FileName="Assets/Scripts/Hand.cs" Line="34" Column="1" />
-      <File FileName="../../Downloads/Block-Breaker-Original-master/Assets/Scripts/Ball.cs" Line="26" Column="3" NotebookId="1" />
-      <File FileName="../ba2Playground-master/Unity/Udemy/Block Breaker/Assets/Scripts/Ball.cs" Line="20" Column="6" NotebookId="1" />
-      <File FileName="../../Downloads/Block-Breaker-Original-master/Assets/Scripts/Paddle.cs" Line="38" Column="1" NotebookId="1" />
-      <File FileName="../ba2Playground-master/Unity/Udemy/Block Breaker/Assets/Scripts/Paddle.cs" Line="19" Column="47" NotebookId="1" />
+      <File FileName="Assets/Scripts/Spell.cs" Line="34" Column="28" />
+      <File FileName="Assets/Scripts/Hand.cs" Line="40" Column="29" />
+      <File FileName="Assets/Scripts/Cube.cs" Line="79" Column="73" />
+      <File FileName="Assets/Scripts/FireCube.cs" Line="42" Column="6" />
+      <File FileName="Assets/Scripts/FrostCube.cs" Line="18" Column="45" />
+      <File FileName="Assets/Scripts/ArcaneCube.cs" Line="19" Column="46" />
+      <File FileName="Assets/Scripts/Column.cs" Line="51" Column="31" />
+      <File FileName="Assets/Scripts/CubeParticle.cs" Line="12" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

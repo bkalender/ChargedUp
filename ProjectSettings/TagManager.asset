@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spell
+  - FrostCube
+  - FireCube
+  - ArcaneCube
   layers:
   - Default
   - TransparentFX

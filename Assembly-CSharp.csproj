@@ -61,7 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ArcaneCube.cs" />
+    <Compile Include="Assets\Scripts\Column.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
+    <Compile Include="Assets\Scripts\CubeParticle.cs" />
+    <Compile Include="Assets\Scripts\FireCube.cs" />
+    <Compile Include="Assets\Scripts\FrostCube.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\Spell.cs" />
     <Reference Include="UnityEditor.StandardEvents">
