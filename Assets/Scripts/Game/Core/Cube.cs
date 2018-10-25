@@ -11,7 +11,7 @@ public class Cube : MonoBehaviour {
 
     [HideInInspector]
     public Rigidbody rb;
-
+    
     public ParticleSystem fireParticle;
     public ParticleSystem frostParticle;
     public ParticleSystem arcaneParticle;
@@ -50,8 +50,6 @@ public class Cube : MonoBehaviour {
     {
         if (col.gameObject.tag == "Spell")
         {
-
-
             foreach (GameObject cube in neighborCubes)
             {
                 if(cube != null){
