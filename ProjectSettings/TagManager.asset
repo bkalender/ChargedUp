@@ -8,6 +8,9 @@ TagManager:
   - FrostCube
   - FireCube
   - ArcaneCube
+  - FireSpell
+  - FrostSpell
+  - ArcaneSpell
   layers:
   - Default
   - TransparentFX

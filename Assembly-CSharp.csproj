@@ -61,14 +61,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ArcaneCube.cs" />
+    <Compile Include="Assets\Scripts\ArcaneSpell.cs" />
     <Compile Include="Assets\Scripts\Column.cs" />
-    <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\CubeParticle.cs" />
-    <Compile Include="Assets\Scripts\FireCube.cs" />
-    <Compile Include="Assets\Scripts\FrostCube.cs" />
-    <Compile Include="Assets\Scripts\Hand.cs" />
-    <Compile Include="Assets\Scripts\Spell.cs" />
+    <Compile Include="Assets\Scripts\FireSpell.cs" />
+    <Compile Include="Assets\Scripts\FrostSpell.cs" />
+    <Compile Include="Assets\Scripts\Game\Core\Cube.cs" />
+    <Compile Include="Assets\Scripts\Game\Core\Hand.cs" />
+    <Compile Include="Assets\Scripts\Game\Core\Spell.cs" />
+    <Compile Include="Assets\Scripts\Game\Cubes\ArcaneCube.cs" />
+    <Compile Include="Assets\Scripts\Game\Cubes\FireCube.cs" />
+    <Compile Include="Assets\Scripts\Game\Cubes\FrostCube.cs" />
+    <Compile Include="Assets\Scripts\Game\Mechanics\ScoreHandler.cs" />
+    <Compile Include="Assets\Scripts\Settings\MainMenu.cs" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Misc\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Misc\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/ogulcanbs/ChargedUp/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
