@@ -8,7 +8,7 @@ public class Cube : MonoBehaviour {
     private CubeType cubeType;
     private Transform cubeTransform;
     List<GameObject> neighborCubes = new List<GameObject>();
-
+    List<GameObject> destroyArray = new List<GameObject>();
     [HideInInspector]
     public Rigidbody rb;
     
@@ -16,7 +16,16 @@ public class Cube : MonoBehaviour {
     public ParticleSystem frostParticle;
     public ParticleSystem arcaneParticle;
 
+    private List<GameObject> DFS(List<GameObject> foundNeighbors, CubeType typeToSearch){
+        if (foundNeighbors.Contains(this.gameObject)) return foundNeighbors;
+        if (this.cubeType != typeToSearch) return foundNeighbors;
+        foundNeighbors.Add(this.gameObject);
+        foreach(GameObject neighbor in neighborCubes){
+            foundNeighbors = neighbor.GetComponent<Cube>().DFS(foundNeighbors, typeToSearch);
+        }
+        return foundNeighbors;
 
+    }
     void Start(){
         cubeTransform = gameObject.transform;
         rb = GetComponent<Rigidbody>();
@@ -38,34 +47,78 @@ public class Cube : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (rb.velocity == Vector3.zero)
-        {
+       
             if (other.tag == gameObject.tag)
             if(!neighborCubes.Contains(other.gameObject))
                 neighborCubes.Add(other.gameObject);
-        }
+
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (neighborCubes.Contains(other.gameObject))
+            neighborCubes.Remove(other.gameObject);
+    }
+    /*public List<GameObject> DestroyNeighbors(){
+        if (neighborCubes.Count == 0)
+        {
+            destroyArray.Add(gameObject);
+            return destroyArray;
+        }
+        else
+        {
+            if (!destroyArray.Contains(gameObject))
+            {
+                destroyArray.Add(gameObject);
+            }
+            foreach (GameObject neighbor in neighborCubes)
+            {
+                return destroyArray.Add(neighbor.GetComponent<Cube>().DestroyNeighbors());
+
+            }
+
+        }
+            
+       
+
+    }*/
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Spell")
+        if (col.gameObject.tag == "FireSpell" && gameObject.tag == "FireCube" || 
+            col.gameObject.tag == "FrostSpell" && gameObject.tag == "FrostCube" || 
+            col.gameObject.tag == "ArcaneSpell" && gameObject.tag == "ArcaneCube" )
         {
+            List<GameObject> toDestroy = new List<GameObject>();
+            toDestroy = DFS(toDestroy, this.cubeType);
+            foreach(GameObject cubes in toDestroy){
+                Destroy(cubes);
+            }
+            /*
             foreach (GameObject cube in neighborCubes)
             {
                 if(cube != null){
                     foreach (GameObject neighbor in cube.GetComponent<Cube>().neighborCubes)
                     {
                         if (neighbor != null)
+                        {
+                            foreach(GameObject nextNeighbor in neighbor.GetComponent<Cube>().neighborCubes)
+                            {
+                                if(nextNeighbor != null)
+                                Destroy(nextNeighbor);
+                            }
                             Destroy(neighbor);
+                        }
+
                     }
                     Destroy(cube);
                 }
 
             }
             Destroy(gameObject);
+        */
         }
 
-
+        
         print("omg it hit me");
     }
 
@@ -73,14 +126,16 @@ public class Cube : MonoBehaviour {
     {
         switch (cubeType){
             case CubeType.Fire:
-                ParticleSystem newParticle = Instantiate(fireParticle);
-                newParticle.transform.position = cubeTransform.position;
+                ParticleSystem newFireParticle = Instantiate(fireParticle);
+                newFireParticle.transform.position = cubeTransform.position;
                 break;
             case CubeType.Frost:
-                Instantiate(frostParticle);
+                ParticleSystem newFrostParticle = Instantiate(frostParticle);
+                newFrostParticle.transform.position = cubeTransform.position;
                 break;
             case CubeType.Arcane:
-                Instantiate(arcaneParticle);
+                ParticleSystem newArcaneParticle = Instantiate(arcaneParticle);
+                newArcaneParticle.transform.position = cubeTransform.position;
                 break;
             default:
                 break;

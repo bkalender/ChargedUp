@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrostCube : MonoBehaviour {
+public class FrostCube : Cube {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +13,11 @@ public class FrostCube : MonoBehaviour {
 	void Update () {
 		
 	}
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "FrostBolt")
+            Destroy(gameObject);
+
+        print("omg it hit me");
+    }
 }

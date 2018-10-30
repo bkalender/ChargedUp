@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcaneCube : MonoBehaviour {
+public class ArcaneCube : Cube {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +13,12 @@ public class ArcaneCube : MonoBehaviour {
 	void Update () {
 		
 	}
+    
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ArcaneBolt")
+            Destroy(gameObject);
+
+        print("omg it hit me");
+    }
 }
