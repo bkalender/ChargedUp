@@ -11,6 +11,7 @@ TagManager:
   - FireSpell
   - FrostSpell
   - ArcaneSpell
+  - UltiSlider
   layers:
   - Default
   - TransparentFX

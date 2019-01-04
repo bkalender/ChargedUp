@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 373013d385999411eaf27a5950c948cb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - fireParticle: {fileID: 198511458839628676, guid: baec20a29c37246d283c3b4c77302300,
+      type: 2}
+  - frostParticle: {fileID: 198306019331548382, guid: 665080a3461c34e4cb96243ad982a35d,
+      type: 2}
+  - arcaneParticle: {fileID: 198110059100820796, guid: e4954e7d0e6b74b2c9c2de4f46bb89dc,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

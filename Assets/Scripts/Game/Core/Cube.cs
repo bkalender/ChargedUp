@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UI;
 
 public class Cube : MonoBehaviour {
 
@@ -11,11 +13,15 @@ public class Cube : MonoBehaviour {
     List<GameObject> destroyArray = new List<GameObject>();
     [HideInInspector]
     public Rigidbody rb;
+    public float score = 5f;
     
     public ParticleSystem fireParticle;
     public ParticleSystem frostParticle;
     public ParticleSystem arcaneParticle;
 
+    // Slider
+
+   
     private List<GameObject> DFS(List<GameObject> foundNeighbors, CubeType typeToSearch){
         if (foundNeighbors.Contains(this.gameObject)) return foundNeighbors;
         if (this.cubeType != typeToSearch) return foundNeighbors;
@@ -31,7 +37,9 @@ public class Cube : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb.velocity);
 
-        if(gameObject.tag == "FireCube")
+
+
+        if (gameObject.tag == "FireCube")
         {
             cubeType = CubeType.Fire;
         } else if (gameObject.tag == "FrostCube")
@@ -92,6 +100,16 @@ public class Cube : MonoBehaviour {
             toDestroy = DFS(toDestroy, this.cubeType);
             foreach(GameObject cubes in toDestroy){
                 Destroy(cubes);
+                Core.Player.playerScore += score;
+                Core.Player.scoreField.text = "Score:" + Core.Player.playerScore;
+                if (Core.Player.ultibar.value == Core.Player.ultibar.maxValue){
+                    Core.Player.UltReady = true;
+                }else{
+                    Core.Player.UltReady = false;
+                    Core.Player.ultibar.value += score;
+                }
+
+                   
             }
             /*
             foreach (GameObject cube in neighborCubes)
@@ -124,7 +142,8 @@ public class Cube : MonoBehaviour {
 
     private void OnDestroy()
     {
-        switch (cubeType){
+        switch (cubeType)
+        {
             case CubeType.Fire:
                 ParticleSystem newFireParticle = Instantiate(fireParticle);
                 newFireParticle.transform.position = cubeTransform.position;
